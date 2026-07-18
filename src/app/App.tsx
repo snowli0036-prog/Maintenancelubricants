@@ -156,12 +156,12 @@ export default function App() {
   };
 
   return (
-    <div className="bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, lineHeight: 1.7 }}>
+    <div className="bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, lineHeight: 1.7 }} role="main">
       {/* ── NAV ─────────────────────────────────────────────────── */}
       <header className="sticky top-0 z-50 bg-primary border-b border-border">
         <div className="max-w-7xl mx-auto px-6 xl:px-12 flex items-center justify-between h-[60px]">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 shrink-0">
+          <a href="#hero" aria-label="Maintenance Lubricants Pty Ltd — return to top" className="flex items-center gap-3 shrink-0">
             <div className="w-7 h-7 flex items-center justify-center shrink-0 border border-border">
               <div className="w-3 h-3 border-[1.5px]" style={{ borderColor: STEEL }} />
             </div>
@@ -176,7 +176,7 @@ export default function App() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-7">
             {NAV_LINKS.map((link) => (
               <a
                 key={link}
@@ -203,7 +203,7 @@ export default function App() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="lg:hidden bg-primary border-t border-border px-6 py-5 flex flex-col gap-5">
+          <nav aria-label="Mobile navigation" className="lg:hidden bg-primary border-t border-border px-6 py-5 flex flex-col gap-5">
             {NAV_LINKS.map((link) => (
               <a
                 key={link}
@@ -214,7 +214,7 @@ export default function App() {
                 {link}
               </a>
             ))}
-          </div>
+          </nav>
         )}
       </header>
 
@@ -711,11 +711,12 @@ export default function App() {
             </div>
 
             {/* Links */}
-            <nav className="flex flex-wrap gap-5">
+            <nav aria-label="Footer navigation" className="flex flex-wrap gap-5">
               {[...NAV_LINKS, "Privacy Policy", "SDS Library"].map((link) => (
                 <a
                   key={link}
-                  href="#"
+                  href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  aria-label={link}
                   className="text-[9px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link}

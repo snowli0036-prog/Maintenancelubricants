@@ -1,7 +1,7 @@
 
-  # Website design for Maintenance Lubricants
+  # Maintenance Lubricants
 
-  This is a code bundle for Website design for Maintenance Lubricants. The original project is available at https://www.figma.com/design/AAqxcadIMRr0YKmNcQNe1X/Website-design-for-Maintenance-Lubricants.
+  This is a code bundle for Maintenance Lubricants. The original project is available at https://www.figma.com/design/AAqxcadIMRr0YKmNcQNe1X/Maintenance-Lubricants.
 
   ## Running the code
 
